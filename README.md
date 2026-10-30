@@ -214,6 +214,10 @@ As an additional networking practice, I installed Android-x86 9.0 in VirtualBox 
 | Static IP | `10.0.0.9/24` |
 | Snapshot | Android-WK1-Clean-Setup |
 
+I initially followed the recommended display settings in the lab guide, including enabling 3D Acceleration. However, Android-x86 got stuck on the Android boot screen during startup.
+
+After troubleshooting and adjusting the VirtualBox display configuration, I was able to boot Android-x86 successfully with 3D Acceleration disabled. The virtual machine then worked properly, and I successfully completed the network connectivity tests.
+
 The VM initially received `10.0.0.4` through DHCP. I then configured the static IP address `10.0.0.9/24`.
 
 **Connectivity Testing:**
