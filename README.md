@@ -1,77 +1,129 @@
-<div align="center">
-
 # 🔐 Cybersecurity Lab Environment Setup
 
 **Building an isolated virtual lab for penetration testing and ethical hacking practice**
 
-![Skill](https://img.shields.io/badge/Skill-Cybersecurity-red) ![VirtualBox](https://img.shields.io/badge/VirtualBox-7.x-blue) ![Kali](https://img.shields.io/badge/Kali_Linux-2026.x-black) ![Network](https://img.shields.io/badge/Network-10.0.0.0%2F24-teal) ![Wireshark](https://img.shields.io/badge/Wireshark-SOC_Labs-1679A7) ![NetworkWalks](https://img.shields.io/badge/NetworkWalks-Internship-darkred)
+![Skill](https://img.shields.io/badge/Skill-Cybersecurity-red)
+![VirtualBox](https://img.shields.io/badge/VirtualBox-7.2.22-blue)
+![Kali](https://img.shields.io/badge/Kali_Linux-2026.3-black)
+![Network](https://img.shields.io/badge/Network-10.0.0.0%2F24-teal)
+![NetworkWalks](https://img.shields.io/badge/NetworkWalks-Internship-darkred)
 
-*Networkwalks Cybersecurity Internship · Batch B084 · Week 1 · Project Module 1 + Extras*
-
-</div>
+*NetworkWalks Cybersecurity Internship · Batch B084 · Week 1 · Project Module 1*
 
 ---
 
 ## 📌 Project Overview
 
-This project sets up a virtual cybersecurity lab on my own laptop using VirtualBox and Kali Linux. It is a private, controlled environment where traffic analysis and other security-testing activities can be practiced safely and repeatably.
+This project focuses on building a virtual cybersecurity lab environment using Oracle VirtualBox and Kali Linux on my personal laptop.
 
-> ⚠️ **Ethics & legality:** Every machine in this lab is my own virtual machine on my own device. Nothing was tested against systems I do not own or have written permission to test.
+The main objective is to create an isolated and controlled environment for cybersecurity learning, networking practice, and future penetration testing activities.
 
-## 🎯 Objectives
+This repository documents the main project requirements, implementation steps, configuration screenshots, troubleshooting experiences, and additional learning activities completed during Week 1.
 
-- [x] Install VirtualBox and import Kali Linux
-- [x] Create a NAT Network in `10.0.0.0/24`
-- [x] Enable shared clipboard, drag & drop and a shared `Downloads` folder
-- [x] Static IP `10.0.0.2/24` for Kali with full Internet access
-- [x] Take a clean snapshot
-- [x] Extra: Android-x86 9.0 VM (`10.0.0.9/24`), ping tested both ways
-- [x] Extra: 6 Wireshark SOC labs (Labs 3 to 8), all 100/100
-- [ ] Extra: Windows 10 VM (not completed yet)
-
-## 🧰 Environment
-
-| Item | Detail |
-|---|---|
-| Host OS | Windows 11 |
-| Laptop | Dell Latitude 7300 |
-| CPU | Intel Core i7-8665U (4 cores, 8 threads), virtualization enabled |
-| RAM | 16 GB DDR4 |
-| Storage | 238 GB SSD (C: 119 GB, plus drive D:) |
-| VirtualBox | 7.2.22 |
-| Kali Linux | 2026.3 (4096 MB RAM, 4 CPU, 80 GB dynamic disk) |
-
-| Machine | Role | IP Address | Network |
-|---|---|---|---|
-| Kali Linux | Attacker / analyst | `10.0.0.2/24` | NatNetwork |
-| Android-x86 9.0 | Target (extra) | `10.0.0.9/24` | NatNetwork |
-| Windows 10 | Target (planned) | `10.0.0.10/24` | NatNetwork |
-
-Gateway `10.0.0.1` · DNS `8.8.8.8`
+> ⚠️ **Ethics & Legality:** All activities documented in this repository were performed in my own virtual lab for educational purposes. No unauthorized systems or networks were targeted.
 
 ---
 
-## 🛠️ Implementation
+## 🎯 Main Project Objectives
 
-**1. VirtualBox 7.2.22** installed from the official site.
+The following objectives cover the main Week 1 VirtualBox and Kali Linux lab setup.
+
+- [x] Install Oracle VirtualBox.
+- [x] Import and configure Kali Linux.
+- [x] Create a NAT Network using the `10.0.0.0/24` subnet.
+- [x] Connect Kali Linux to the configured NAT Network.
+- [x] Configure Kali Linux with a static IP address (`10.0.0.2/24`).
+- [x] Enable shared clipboard and drag & drop.
+- [x] Configure a shared `Downloads` folder between the host and Kali Linux.
+- [x] Verify internet connectivity and DNS resolution.
+- [x] Create a clean virtual machine snapshot.
+
+---
+
+## 🧰 Environment & Specifications
+
+### Host Machine
+
+| Item | Specification |
+|---|---|
+| Host OS | Windows 11 |
+| Laptop | Dell Latitude 7300 |
+| CPU | Intel Core i7-8665U (4 cores, 8 threads) |
+| RAM | 16 GB DDR4 |
+| Storage | 238 GB SSD (C: 119 GB, plus drive D:) |
+| Virtualization | Enabled |
+
+### Virtualization Environment
+
+| Item | Configuration |
+|---|---|
+| Virtualization Software | Oracle VirtualBox 7.2.22 |
+| Main Virtual Machine | Kali Linux 2026.3 |
+| Allocated RAM | 4096 MB |
+| Allocated CPU | 4 CPUs |
+| Virtual Disk | 80 GB (Dynamic Allocation) |
+| Network Type | NAT Network |
+| Network Prefix | `10.0.0.0/24` |
+| Gateway | `10.0.0.1` |
+| DNS | `8.8.8.8` |
+
+### Network Configuration
+
+| Machine | Role | IP Address | Network |
+|---|---|---|---|
+| Kali Linux | Attacker / Analyst | `10.0.0.2/24` | NAT Network |
+| Android-x86 9.0 | Target (Extra Task) | `10.0.0.9/24` | NAT Network |
+| Windows 10 | Target (Planned) | `10.0.0.10/24` | NAT Network |
+
+*Note: Android-x86 is an additional project. Windows 10 is still planned and has not been completed.*
+
+---
+
+## 🛠️ Main Project Implementation
+
+### 1. VirtualBox Installation
+
+Installed Oracle VirtualBox 7.2.22 from the official website.
 
 <img src="screenshots/kali%20linux/01-virtualbox-installed.png" width="480">
 
-**2. NAT Network** `NatNetwork`, prefix `10.0.0.0/24`, DHCP enabled.
+### 2. NAT Network Configuration
+
+Created a NAT Network named `NatNetwork` with the following configuration:
+
+- Network Prefix: `10.0.0.0/24`
+- DHCP: Enabled
 
 <img src="screenshots/kali%20linux/02-natnetwork.png" width="560">
 
-**3. Kali Linux** imported and attached to `NatNetwork`, Promiscuous Mode: Allow All.
+### 3. Kali Linux Import and Network Adapter
+
+Imported Kali Linux 2026.3 into VirtualBox and connected its network adapter to `NatNetwork`.
+
+Promiscuous Mode was configured to **Allow All** according to the lab configuration.
 
 <img src="screenshots/kali%20linux/03-kali-imported.png" width="560">
+
 <img src="screenshots/kali%20linux/04-kali-nat-network-adapter.png" width="560">
 
-**4. Clipboard, drag & drop, shared folder** (Bidirectional; host `Downloads` shared with auto-mount).
+### 4. Shared Clipboard, Drag & Drop, and Shared Folder
+
+Configured the following integration features:
+
+- Shared Clipboard: Bidirectional
+- Drag & Drop: Bidirectional
+- Shared Folder: Host `Downloads` directory
+- Auto-mount: Enabled
 
 <img src="screenshots/kali%20linux/05a-shared-clipboard.png" width="560">
+
 <img src="screenshots/kali%20linux/05b-drag-and-drop.png" width="560">
+
 <img src="screenshots/kali%20linux/06b-shared-folder-configured.png" width="560">
+
 <img src="screenshots/kali%20linux/06c-shared-folder-mounted.png" width="560">
+
+To access the shared folder, I added my Kali Linux user to the `vboxsf` group:
 
 ```bash
 sudo usermod -aG vboxsf $USER
@@ -79,112 +131,314 @@ sudo reboot
 ls /media/sf_Downloads
 ```
 
-**5. Static IP** set from the terminal (see Troubleshooting):
+### 5. Static IP Configuration
+
+Initially, Kali Linux did not obtain an IP address automatically and remained stuck at:
+
+`connecting (getting IP configuration)`
+
+After troubleshooting, I configured a static IP address through NetworkManager using `nmcli`.
 
 ```bash
 sudo nmcli connection modify "Wired connection 1" ipv4.method manual ipv4.addresses 10.0.0.2/24 ipv4.gateway 10.0.0.1 ipv4.dns 8.8.8.8 ipv4.dad-timeout 0
+
 sudo nmcli connection up "Wired connection 1"
 ```
 
+The resulting configuration:
+
+- IP Address: `10.0.0.2/24`
+- Gateway: `10.0.0.1`
+- DNS: `8.8.8.8`
+
 <img src="screenshots/kali%20linux/07a-kali-ip-address.png" width="480">
+
 <img src="screenshots/kali%20linux/07b-kali-manual-ip-settings.png" width="480">
 
-**6. Verify** Internet and DNS:
+### 6. Internet Connectivity and DNS Verification
 
-```
---- 8.8.8.8 ping statistics ---
+After configuring the static IP, I tested internet connectivity and DNS resolution.
+
+**Ping to 8.8.8.8:**
+
+```text
 4 packets transmitted, 4 received, 0% packet loss
---- google.com ping statistics ---
+```
+
+**Ping to google.com:**
+
+```text
 4 packets transmitted, 4 received, 0% packet loss
 ```
+
+Both tests completed successfully.
 
 <img src="screenshots/kali%20linux/08a-internet-test-ping-ip.png" width="480">
+
 <img src="screenshots/kali%20linux/08b-internet-test-ping-dns.png" width="480">
 
-**7. Snapshot** `Kali-WK1-Clean-Setup` taken while the VM was powered off.
+### 7. Virtual Machine Snapshot
+
+Created a clean snapshot named:
+
+`Kali-WK1-Clean-Setup`
+
+The snapshot was taken while the virtual machine was powered off to preserve the configured environment.
 
 <img src="screenshots/kali%20linux/09-vm-snapshot-taken.png" width="480">
 
 ---
 
-## ➕ Extra Tasks
+## ➕ Additional Tasks & Learning Activities
 
-### Android-x86 9.0 VM ✅
-`Android9-Lab` (Linux, Other Linux 64-bit), 2048 MB RAM, about 10 GB VDI, NatNetwork, VBoxVGA with 3D acceleration off. Installed to disk with GRUB. DHCP gave `10.0.0.4`, then I set the static IP `10.0.0.9/24`. Snapshot: `Android-WK1-Clean-Setup`.
+The following activities were completed as additional learning beyond the main VirtualBox and Kali Linux setup.
 
-```
-Android -> Kali     (10.0.0.2)   0% packet loss
-Android -> Internet (8.8.8.8)    0% packet loss
-Kali    -> Android  (10.0.0.9)   0% packet loss
-```
+They are documented separately and should not be confused with the main Week 1 project requirements.
+
+### 1. Android-x86 9.0 Virtual Machine
+
+As an additional networking practice, I installed Android-x86 9.0 in VirtualBox and connected it to the same NAT Network.
+
+**Virtual Machine Configuration:**
+
+| Item | Configuration |
+|---|---|
+| VM Name | Android9-Lab |
+| Operating System | Linux |
+| Version | Other Linux 64-bit |
+| RAM | 2048 MB |
+| Virtual Disk | Approximately 10 GB |
+| Network | NAT Network |
+| Graphics Controller | VBoxVGA |
+| 3D Acceleration | Disabled |
+| Static IP | `10.0.0.9/24` |
+| Snapshot | Android-WK1-Clean-Setup |
+
+The VM initially received `10.0.0.4` through DHCP. I then configured the static IP address `10.0.0.9/24`.
+
+**Connectivity Testing:**
+
+| Test | Result |
+|---|---|
+| Android → Kali (`10.0.0.2`) | 0% packet loss |
+| Android → Internet (`8.8.8.8`) | 0% packet loss |
+| Kali → Android (`10.0.0.9`) | 0% packet loss |
 
 <img src="screenshots/android/11-android-ip-after-static-10.0.0.9.png" width="300">
+
 <img src="screenshots/android/12-android-ping-kali-and-internet.png" width="300">
+
 <img src="screenshots/android/12b-kali-ping-android.png" width="300">
 
-### Wireshark SOC Labs ✅
+### 2. Wireshark SOC Labs
 
-| Lab | Title | What I practiced | Score |
+As another additional learning activity, I completed six browser-based Wireshark SOC Labs.
+
+Each lab contained 10 tasks involving network traffic investigation and analysis.
+
+**Results:**
+
+| Lab | Title | Skills Practiced | Score |
 |---|---|---|---|
-| 3 | Identify the Attacker's IP | Filtering TCP SYN packets, finding attacker and target | 100/100 |
-| 4 | Follow TCP Stream | Reading a plain-text chat | 100/100 |
-| 5 | Follow TCP Stream, Part 2 | Hidden HTML comment and a downloaded text file | 100/100 |
-| 6 | HTTP Plain Text Credentials | Clear-text login in an HTTP POST form | 100/100 |
-| 7 | Catch the Brute Force Attacker | Many failed FTP logins from one source | 100/100 |
-| 8 | Catch the Call Scammer | Investigating a captured VoIP call | 100/100 |
+| 3 | Identify the Attacker's IP | Filtering TCP SYN packets and identifying attacker and target IPs | 100/100 |
+| 4 | Follow TCP Stream 1 | Reconstructing and analyzing a plain-text conversation | 100/100 |
+| 5 | Follow TCP Stream, Part 2 | Finding hidden HTML comments and downloaded text files | 100/100 |
+| 6 | HTTP Plain Text Credentials | Identifying credentials transmitted through HTTP POST requests | 100/100 |
+| 7 | Catch the Brute Force Attacker | Detecting repeated FTP login attempts | 100/100 |
+| 8 | Catch the Call Scammer | Investigating captured VoIP traffic and identifying the scammer | 100/100 |
 
-Filters I used:
+**Total: 6 Labs · 60 Tasks · 600/600 Points**
 
+#### Wireshark Display Filters
+
+Some of the display filters I practiced during the labs:
+
+```text
+tcp.flags.syn == 1
 ```
-tcp.flags.syn == 1                              # packets with the SYN flag set
-tcp && !(tcp.port == 80 || tcp.port == 443)     # hide normal web traffic
-http.request.method == "POST"                   # form submissions
-ftp.response.code == 530                        # failed FTP logins
+
+```text
+tcp && !(tcp.port == 80 || tcp.port == 443)
 ```
+
+```text
+http.request.method == "POST"
+```
+
+```text
+ftp.response.code == 530
+```
+
+#### Lab Result Screenshots
 
 | Lab 3 | Lab 4 | Lab 5 |
-|:-:|:-:|:-:|
+|:---:|:---:|:---:|
 | <img src="screenshots/wireshark/Lab%203%20Result%20-%20Marliana.png" width="240"> | <img src="screenshots/wireshark/Lab%204%20Result%20-%20Marliana.png" width="240"> | <img src="screenshots/wireshark/Lab%205%20Result%20-%20Marliana.png" width="240"> |
 
 | Lab 6 | Lab 7 | Lab 8 |
-|:-:|:-:|:-:|
+|:---:|:---:|:---:|
 | <img src="screenshots/wireshark/Lab%206%20Result%20-%20Marliana.png" width="240"> | <img src="screenshots/wireshark/Lab%207%20Result%20-%20Marliana.png" width="240"> | <img src="screenshots/wireshark/Lab%208%20Result%20-%20Marliana.png" width="240"> |
 
-### Windows 10 VM ⏳ (not completed yet)
-This is where I was stuck the longest. Windows setup shows *"Windows cannot find the Microsoft Software License Terms"*. I downloaded a new ISO, checked that it was healthy and turned off Hyper-V related features, but the error stayed. I will update this repo when it works. Planned: `Windows10-Lab`, 4096 MB RAM, 40 GB VDI, NatNetwork, `10.0.0.10/24`.
+### 3. Windows 10 Virtual Machine (In Progress)
+
+The Windows 10 virtual machine is an additional setup that I attempted but have not completed yet.
+
+During installation, I encountered the following error:
+
+`Windows cannot find the Microsoft Software License Terms.`
+
+Troubleshooting attempts included:
+
+- Downloading a new Windows 10 ISO.
+- Checking the ISO file integrity.
+- Disabling Hyper-V-related Windows features.
+
+However, the installation issue persisted.
+
+**Planned Configuration:**
+
+| Item | Configuration |
+|---|---|
+| VM Name | Windows10-Lab |
+| RAM | 4096 MB |
+| Virtual Disk | 40 GB |
+| Network | NAT Network |
+| Planned IP | `10.0.0.10/24` |
+
+I will update this repository once the Windows 10 virtual machine is successfully installed and configured.
 
 ---
 
-## 🧯 Troubleshooting
+## 🧯 Troubleshooting & Challenges
 
-**Kali had no IP.** `eth0` was stuck in "connecting (getting IP configuration)". I tried different settings several times. The fix was setting the static IP with `nmcli` and `ipv4.dad-timeout 0` (commands above). After that Internet and DNS worked.
+During the setup process, I encountered several technical issues. Here are the problems and the solutions I applied.
+
+### 1. Kali Linux Could Not Obtain an IP Address
+
+**Problem:**
+
+The network interface `eth0` remained stuck at:
+
+`connecting (getting IP configuration)`
+
+**Solution:**
+
+After trying different network configurations, I configured a static IP through `nmcli` and adjusted the duplicate address detection timeout using:
+
+`ipv4.dad-timeout 0`
+
+After applying the configuration, Kali Linux successfully connected to the network and passed the internet and DNS connectivity tests.
 
 <img src="screenshots/kali%20linux/10a-troubleshooting-connecting.png" width="480">
+
 <img src="screenshots/kali%20linux/10b-troubleshooting-fix-nmcli.png" width="560">
 
-**Kali froze on reboot.** After adding my user to `vboxsf` it stayed on a black screen. I used Machine > Reset and it booted normally.
+### 2. Kali Linux Black Screen After Reboot
 
-**Drive C was full.** I kept VM files, downloads and snapshots on drive D.
+**Problem:**
 
-**Promiscuous Mode was on "Deny".** I changed it to "Allow All" to match the task.
+After adding my user to the `vboxsf` group, Kali Linux displayed a black screen during reboot.
 
-**Wireshark Lab 3.** One answer was wrong and I got 90%. I did it again, read the questions more carefully and got 100%.
+**Solution:**
+
+I used **Machine > Reset** in VirtualBox. The virtual machine then booted normally.
+
+### 3. Limited Storage on Drive C
+
+**Problem:**
+
+My C drive had limited available storage for virtual machines and downloaded installation files.
+
+**Solution:**
+
+I moved VM files, downloads, and snapshots to drive D to manage storage more efficiently.
+
+### 4. Promiscuous Mode Configuration
+
+**Problem:**
+
+The network adapter's Promiscuous Mode was initially set to `Deny`.
+
+**Solution:**
+
+I changed it to `Allow All` to match the lab configuration.
+
+### 5. Wireshark Lab 3 Initial Score
+
+**Problem:**
+
+My first attempt at Wireshark Lab 3 resulted in a score of 90%.
+
+**Solution:**
+
+I reviewed the questions more carefully, repeated the lab, and achieved 100/100.
+
+### 6. Windows 10 Installation Error
+
+**Problem:**
+
+The Windows 10 installer displayed:
+
+`Windows cannot find the Microsoft Software License Terms.`
+
+**Solution / Current Status:**
+
+I tried a new ISO file, checked its integrity, and disabled Hyper-V-related features. However, the problem remained unresolved. This VM is still in progress.
 
 ---
 
 ## 📚 Lessons Learned
 
-- I thought a lab like this needs a gaming laptop. In fact a modest laptop can run several virtual machines.
-- This was my first time with Wireshark. I was surprised the labs run in the browser, and I enjoyed answering the questions. It was my favourite part.
-- A snapshot gives me a clean state to go back to if something breaks.
-- Plain-text protocols (HTTP, FTP, an old chat tool) show everything to anyone who captures the traffic, so encryption like HTTPS matters.
-- My advice for anyone starting: just try it. If it feels hard, do not give up. Take a break, then continue.
+This project gave me practical experience in setting up a virtual cybersecurity environment and troubleshooting networking issues.
+
+Some of my key takeaways:
+
+- Before starting this project, I thought building a cybersecurity lab required a gaming laptop. I learned that a laptop with appropriate specifications can run multiple virtual machines with careful resource management.
+- I gained hands-on experience configuring virtual networks, static IP addresses, shared folders, and virtual machine snapshots.
+- This was my first experience with Wireshark. I was surprised that the SOC labs could be completed directly in a browser, and I especially enjoyed the packet analysis challenges.
+- An unencrypted protocol such as HTTP or FTP can expose sensitive information when traffic is intercepted. This helped me understand the importance of encrypted communication.
+- Troubleshooting is an important part of learning. Not every configuration works on the first attempt, and documenting problems helps me understand how to solve them.
+
+**My advice to anyone starting out:**
+
+Just give it a try. If something feels difficult, do not give up. Take a break, review the problem, and continue learning step by step.
 
 ---
 
-<div align="center">
+## 📂 Repository Structure
 
-**Networkwalks Cybersecurity Internship · Instructor: Waqas Karim CCIE**
-*All activity performed on my own virtual lab for educational purposes.*
+```text
+NETWORKWALKS-MARLIANA-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP/
+│
+├── README.md
+│
+└── screenshots/
+    ├── kali linux/
+    │   ├── 01-virtualbox-installed.png
+    │   ├── 02-natnetwork.png
+    │   ├── 03-kali-imported.png
+    │   ├── ...
+    │
+    ├── android/
+    │   ├── 11-android-ip-after-static-10.0.0.9.png
+    │   ├── 12-android-ping-kali-and-internet.png
+    │   └── 12b-kali-ping-android.png
+    │
+    └── wireshark/
+        ├── Lab 3 Result - Marliana.png
+        ├── Lab 4 Result - Marliana.png
+        ├── Lab 5 Result - Marliana.png
+        ├── Lab 6 Result - Marliana.png
+        ├── Lab 7 Result - Marliana.png
+        └── Lab 8 Result - Marliana.png
+```
 
-</div>
+---
+
+## 🙏 Acknowledgement
+
+Thank you to **Waqas Karim (CCIE)** and **NetworkWalks** for providing the learning materials, guidance, and opportunity to gain hands-on cybersecurity experience.
+
+**NetworkWalks Cybersecurity Internship · Batch B084 · Week 1**
+
+*All activities were performed in my own virtual lab for educational purposes.*
