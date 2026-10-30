@@ -1,15 +1,29 @@
-# Kali Linux VirtualBox Setup
-**Building and Configuring an Isolated Cybersecurity Lab Environment**
-![Cybersecurity](https://img.shields.io/badge/Domain-Cybersecurity-red)
-![VirtualBox](https://img.shields.io/badge/VirtualBox-7.2.22-blue)
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-2026.3-blue)
-![Network](https://img.shields.io/badge/Network-10.0.0.0%2F24-green)
-![Internship](https://img.shields.io/badge/NetworkWalks-Week_1-orange)
+# 🔐 Cybersecurity Lab Environment Setup
 
+<p align="center">
+  <strong>Building and Configuring an Isolated Virtual Lab for Penetration Testing and Ethical Hacking Practice</strong>
+</p>
 
-## Project Overview
+<p align="center">
+  <img src="https://img.shields.io/badge/Skill-Cybersecurity-red" />
+  <img src="https://img.shields.io/badge/VirtualBox-7.2.22-blue" />
+  <img src="https://img.shields.io/badge/Kali_Linux-2026.3-blue" />
+  <img src="https://img.shields.io/badge/Network-10.0.0.0%2F24-green" />
+  <img src="https://img.shields.io/badge/Internship-NetworkWalks-orange" />
+</p>
 
-This project presents the process of preparing a Kali Linux virtual environment using Oracle VM VirtualBox as part of the NetworkWalks Cybersecurity Internship 2026, Batch B084, Week 1.
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-GitHub-black?logo=github" />
+  <img src="https://img.shields.io/badge/OS-Linux-red?logo=linux" />
+  <img src="https://img.shields.io/badge/Project-Week%201-orange" />
+  <img src="https://img.shields.io/badge/Author-Marliana-red" />
+</p>
+
+---
+
+## 📌 Project Overview
+
+This project presents the process of preparing a Kali Linux virtual environment using Oracle VM VirtualBox as part of the **NetworkWalks Cybersecurity Internship 2026, Batch B084, Week 1**.
 
 The lab focuses on setting up a functional virtual machine, configuring its network environment, enabling communication between the host and guest systems, and checking internet connectivity.
 
@@ -458,6 +472,7 @@ Interested in cybersecurity, digital forensics, backend development, and full-st
 | Virtualization Platform | Oracle VM VirtualBox |
 | Guest Operating System | Kali Linux 2026.3 |
 | Host Operating System | Windows 11 |
+| Author | Marliana |
 
 ### Acknowledgement
 
@@ -467,10 +482,10 @@ This project represents my hands-on learning process and the knowledge gained wh
 
 ---
 
-<div align="center">
-
-**NetworkWalks Cybersecurity Internship 2026**
-
-*Learn • Practice • Explore • Secure*
-
-</div>
+<p align="center">
+  <strong>NetworkWalks Cybersecurity Internship 2026</strong>
+  <br>
+  <em>Learn • Practice • Explore • Secure</em>
+  <br><br>
+  <strong>Created by Marliana</strong>
+</p>
