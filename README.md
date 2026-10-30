@@ -1,23 +1,13 @@
- <div align="center">
+# Kali Linux VirtualBox Setup
+**Building and Configuring an Isolated Cybersecurity Lab Environment**
+![Cybersecurity](https://img.shields.io/badge/Domain-Cybersecurity-red)
+![VirtualBox](https://img.shields.io/badge/VirtualBox-7.2.22-blue)
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-2026.3-blue)
+![Network](https://img.shields.io/badge/Network-10.0.0.0%2F24-green)
+![Internship](https://img.shields.io/badge/NetworkWalks-Week_1-orange)
 
-# 🛡️ Cybersecurity Lab Environment Setup
 
-### Kali Linux Installation and Network Configuration
-
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-2026.3-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
-![VirtualBox](https://img.shields.io/badge/VirtualBox-7.2.22-183A61?style=for-the-badge&logo=virtualbox&logoColor=white)
-![Windows](https://img.shields.io/badge/Host-Windows_11-0078D4?style=for-the-badge&logo=windows11&logoColor=white)
-![NetworkWalks](https://img.shields.io/badge/NetworkWalks-Cybersecurity_Internship-2E8B57?style=for-the-badge)
-
-**NetworkWalks Cybersecurity Internship 2026**
-
-**Batch B084 | Week 1 | Main Project**
-
-</div>
-
----
-
-## 🔐 Project Overview
+## Project Overview
 
 This project presents the process of preparing a Kali Linux virtual environment using Oracle VM VirtualBox as part of the NetworkWalks Cybersecurity Internship 2026, Batch B084, Week 1.
 
